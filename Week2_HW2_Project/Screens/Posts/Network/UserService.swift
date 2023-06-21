@@ -15,10 +15,14 @@ class UserService {
     
     func fetchUsers() -> Future<[User], Error> {
         
-        return Future { promise in
-            let finalUrlString = self.urlString
-            guard let url = URL(string : finalUrlString) else {return}
+        return Future { [weak self] promise in
+            guard let self = self else { return }
             
+            guard let url = URL(string: self.urlString) else {
+                print("Invalid URL")
+                return
+            }
+
             URLSession.shared.dataTaskPublisher(for: url)
                 .map{$0.data}
                 .decode(type:[User].self, decoder:JSONDecoder())
@@ -31,6 +35,7 @@ class UserService {
                         promise(.failure(err))
                     }
                 } receiveValue : { users in
+                    User.fetchedData = users
                     promise(.success(users))
 //                    print("Received Users: \(response.user)")
                 }

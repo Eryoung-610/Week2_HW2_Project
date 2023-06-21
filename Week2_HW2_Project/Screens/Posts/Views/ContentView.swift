@@ -8,14 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel = UserViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            VStack {
+                Text("All Users")
+                    .font(.system(size:32).bold())
+                byUserId()
+            }
+            .onAppear {
+                viewModel.getUsers()
+            }
         }
-        .padding()
+    }
+    
+    
+    private func byUserId() -> some View {
+        ScrollView {
+            ForEach (viewModel.users) { user in
+                NavigationLink {
+                    Text(String(user.userId))
+                } label : {
+                    UserCell(user:user)
+                }
+            }
+        }
     }
 }
 
