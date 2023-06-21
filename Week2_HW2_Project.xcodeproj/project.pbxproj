@@ -11,6 +11,8 @@
 		F1EA31D52A43882F004CE702 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA31D42A43882F004CE702 /* ContentView.swift */; };
 		F1EA31D72A438833004CE702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EA31D62A438833004CE702 /* Assets.xcassets */; };
 		F1EA31DB2A438833004CE702 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1EA31DA2A438833004CE702 /* Preview Assets.xcassets */; };
+		F1EA31E82A438AA7004CE702 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA31E72A438AA7004CE702 /* UserViewModel.swift */; };
+		F1EA31EA2A438B1A004CE702 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EA31E92A438B1A004CE702 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		F1EA31D62A438833004CE702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1EA31D82A438833004CE702 /* Week2_HW2_Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Week2_HW2_Project.entitlements; sourceTree = "<group>"; };
 		F1EA31DA2A438833004CE702 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F1EA31E72A438AA7004CE702 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		F1EA31E92A438B1A004CE702 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,8 @@
 		F1EA31D12A43882F004CE702 /* Week2_HW2_Project */ = {
 			isa = PBXGroup;
 			children = (
+				F1EA31E22A43892E004CE702 /* Screens */,
 				F1EA31D22A43882F004CE702 /* Week2_HW2_ProjectApp.swift */,
-				F1EA31D42A43882F004CE702 /* ContentView.swift */,
 				F1EA31D62A438833004CE702 /* Assets.xcassets */,
 				F1EA31D82A438833004CE702 /* Week2_HW2_Project.entitlements */,
 				F1EA31D92A438833004CE702 /* Preview Content */,
@@ -67,6 +71,56 @@
 				F1EA31DA2A438833004CE702 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F1EA31E12A438904004CE702 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F1EA31E92A438B1A004CE702 /* UserService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F1EA31E22A43892E004CE702 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F1EA31E32A438933004CE702 /* PostDetails */,
+				F1EA31E42A43893D004CE702 /* Posts */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F1EA31E32A438933004CE702 /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		F1EA31E42A43893D004CE702 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				F1EA31E62A438962004CE702 /* Views */,
+				F1EA31E12A438904004CE702 /* Network */,
+				F1EA31E52A43894B004CE702 /* Model */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		F1EA31E52A43894B004CE702 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1EA31E72A438AA7004CE702 /* UserViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1EA31E62A438962004CE702 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1EA31D42A43882F004CE702 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +193,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1EA31EA2A438B1A004CE702 /* UserService.swift in Sources */,
 				F1EA31D52A43882F004CE702 /* ContentView.swift in Sources */,
+				F1EA31E82A438AA7004CE702 /* UserViewModel.swift in Sources */,
 				F1EA31D32A43882F004CE702 /* Week2_HW2_ProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
