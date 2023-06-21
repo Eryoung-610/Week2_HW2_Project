@@ -9,17 +9,18 @@ import SwiftUI
 
 struct UserPostsView: View {
     let posts: [User]
+    let userId : Int
     
     var body: some View {
         ScrollView{
             ForEach(posts) { post in
-                UserCell(user: post)
+                NavigationLink {
+                    PostCell(user:post)
+                } label : {
+                    TitleCell(user: post)
+                }
             }
-            //        .padding()
-            .navigationTitle("Posts")
-            //        .foregroundColor(.black)
-            //        .background(Color.blue.opacity(0.2))
-            //        .cornerRadius(10)
+            .navigationTitle("Posts by \(userId)")
         }
     }
     

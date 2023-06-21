@@ -27,7 +27,9 @@ struct ContentView: View {
     private func byUserId() -> some View {
         ScrollView {
             ForEach(viewModel.groupedUsers.keys.sorted(), id: \.self) { userId in
-                NavigationLink(destination: UserPostsView(posts: viewModel.groupedUsers[userId] ?? [])) {
+                NavigationLink {
+                    UserPostsView(posts: viewModel.groupedUsers[userId] ?? [], userId: userId)
+                } label : {
                     UserCell(user: viewModel.groupedUsers[userId]?.first ?? User.mock)
                 }
             }
