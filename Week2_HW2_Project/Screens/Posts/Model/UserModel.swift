@@ -7,22 +7,6 @@
 
 import Foundation
 
-//struct UserPostData {
-//    let user: User
-//    let totalCount: Int
-//}
-//
-//struct UserPostDataManager {
-//    static let mockData: [UserPostData] = [
-//        UserPostData(user: User.mock, totalCount: 5),
-//        // Add more user data with the respective counts
-//    ]
-//
-//    static func getUserPostData(for userId: Int) -> UserPostData? {
-//        return mockData.first { $0.user.userId == userId }
-//    }
-//}
-
 struct User: Decodable, Identifiable {
     let userId: Int
     let id: Int

@@ -14,14 +14,16 @@ struct UserCell: View {
     var body: some View {
         HStack {
                 HStack {
+                    Text("User ID : ")
                     Text(String(user.userId))
-                        .padding(.bottom,40)
+//                        .padding(.bottom,40)
                 }
-            VStack(alignment: .leading) {
-                Text(String(user.id))
-                    .bold()
+            Divider()
+                .frame(minHeight: 100)
+            HStack {
 //                Text(user.title)
 //                Text(user.body)
+                Text("Posts Made : ")
                 Text(String(user.totalCount))
                 
             }
